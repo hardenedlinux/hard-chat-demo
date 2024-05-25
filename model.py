@@ -27,7 +27,7 @@ def get_prompt(message: str,
                system_prompt: str) -> str:
     """Create a prompt for the model to generate a response from."""
     texts = [f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n{system_prompt}<|eot_id|>"]
-    texts.append(f"<|start_header_id|>user<|end_header_id|>\n\n{message.strip()}<|eot_id|><|end_of_text|>")
+    texts.append(f"<|start_header_id|>user<|end_header_id|>\n\n{message.strip()}<|eot_id|>")
     return "".join(texts)
 
 class LLAMA_wrapper:
