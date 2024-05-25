@@ -107,7 +107,7 @@ with gr.Blocks(css="style.css") as demo:
     gr.Markdown(DESCRIPTION)
 
     with gr.Group():
-        chatbot = gr.Chatbot(label="SymeChat")
+        chatbot = gr.Chatbot(label="Hard-Chat")
         with gr.Row():
             textbox = gr.Textbox(container=False,
                                  show_label=False,
@@ -301,4 +301,4 @@ def get_server_name() -> str:
         return os.getenv("DOMAIN_NAME", "0.0.0.0")
 
 
-demo.queue(max_size=20).launch(share=True, server_port=80, server_name=get_server_name())
+demo.queue(max_size=20).launch(server_name=get_server_name())
