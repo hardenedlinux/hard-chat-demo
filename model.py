@@ -38,7 +38,8 @@ class LLAMA_wrapper:
         self.config = config
         self.model = Llama(model_path=config["model_name"],
                            n_ctx=config["max_input"],
-                           n_batch=config["max_input"])
+                           n_batch=config["max_input"],
+                           n_gpu_layers=30)
         self.tokenizer = SentencePieceProcessor(model_file="tokenizer.model")
 
     def get_input_token_length(self,
