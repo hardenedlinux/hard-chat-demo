@@ -26,7 +26,7 @@ def get_prompt(message: str,
                chat_history: list[tuple[str, str]],
                system_prompt: str) -> str:
     """Create a prompt for the model to generate a response from."""
-    texts = [f"<|start_header_id|>system<|end_header_id|>\n\n{system_prompt}<|eot_id|>\n\n"]
+    texts = [f"<|start_header_id|>system<|end_header_id|>\n\n{system_prompt}<|eot_id|>"]
     texts.append(f"<|start_header_id|>user<|end_header_id|>\n\n{message.strip()}<|eot_id|>\n\n")
     return "".join(texts)
 
