@@ -81,8 +81,8 @@ class LLAMA_wrapper:
             top_k: int = 50,
             ) -> Iterator[str]:
         """Generate a response from a prompt."""
-        prompt = get_prompt(message, chat_history, system_prompt)
-        return self.generate(prompt, max_new_tokens, temperature, top_p, top_k)
+        #prompt = get_prompt(message, chat_history, system_prompt)
+        return self.generate(message, max_new_tokens, temperature, top_p, top_k)
 
     def __call__(self, prompt: str, **kwargs: Any) -> str:
         """Generate a response from a prompt."""
