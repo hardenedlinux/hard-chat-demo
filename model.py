@@ -31,6 +31,7 @@ def get_prompt(message: str,
         texts.append(f"<|start_header_id|>user<|end_header_id|>\n\n")
         texts.append(f"{user_input.strip()}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n")
         texts.append(f"{response.strip()}<|eot_id|>\n\n")
+    texts.append(f"<|start_header_id|>user<|end_header_id|>\n\n{message.strip()}<|eot_id|>")
     return "".join(texts)
 
 
