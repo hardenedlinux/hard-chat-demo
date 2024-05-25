@@ -103,7 +103,7 @@ def check_input_token_length(message: str,
         raise gr.Error(errmsg)
 
 
-with gr.Blocks(css="style.css") as demo:
+with gr.Blocks(theme='ParityError/Anime') as demo:
     gr.Markdown(DESCRIPTION)
 
     with gr.Group():
