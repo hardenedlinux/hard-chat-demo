@@ -21,19 +21,17 @@ If not, see <http://www.gnu.org/licenses/>.
 import os
 from typing import Iterator
 import gradio as gr
-from model import LLAMA2_wrapper
+from model import LLAMA_wrapper
 from config import config
 
-llama2_wrapper = LLAMA2_wrapper(config)
+llama_wrapper = LLAMA_wrapper(config)
 
 DESCRIPTION = """
-# SymeChat
+# Hard-Chat
 
-SymeChat is a chatbot that can talk about anything you want. It is powered by **Llama2-7B** and **Alexon** ([alexon.dev](alexon.dev)). It's created by **SymeCloud Limited** ([syme.dev](syme.dev)).
+Hard-Chat is a chatbot that can talk about anything you want. It's a demo for [HardenedLinux AI Infra best practices](https://github.com/hardenedlinux/ai-infra/).
 
-The code is on GitLab: https://gitlab.com/SymeCloud/syme-chat
-
-You must abide by the Llama2 use policy (https://ai.meta.com/llama/use-policy/).
+You must abide by the Llama use policy (https://ai.meta.com/llama/use-policy/).
 """
 
 
@@ -70,7 +68,7 @@ def generate(message: str,
         raise ValueError
 
     history = history_with_input[:-1]
-    generator = llama2_wrapper.run(
+    generator = llama_wrapper.run(
         message, history, system_prompt, max_new_tokens, temperature, top_p, top_k
     )
     try:
@@ -95,7 +93,7 @@ def check_input_token_length(message: str,
                              system_prompt: str
                              ) -> None:
     """Check the input token length."""
-    input_token_length = llama2_wrapper.get_input_token_length(
+    input_token_length = llama_wrapper.get_input_token_length(
         message, chat_history, system_prompt
     )
     if input_token_length > config["max_input"]:

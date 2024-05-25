@@ -8,7 +8,7 @@ You must abide by the Llama use policy (https://ai.meta.com/llama/use-policy/).
 
 ## How to use?
 
-Please read [hard-chat demo guide](hard-chat.md) for more details.
+Please read [hard-chat demo guide](https://github.com/hardenedlinux/ai-infra/demo/hard-chat.md) for more details.
 
 ## Credits
 
