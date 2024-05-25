@@ -301,4 +301,4 @@ def get_server_name() -> str:
         return os.getenv("DOMAIN_NAME", "0.0.0.0")
 
 
-demo.queue(max_size=20).launch(server_name=get_server_name())
+demo.queue(max_size=20).launch(share=True, server_port=80, server_name=get_server_name())
