@@ -1,0 +1,51 @@
+.gradio-container {
+    background-color: #f1ede9;
+}
+
+#block-label
+{
+    background: #676aab;
+}
+
+.gr-group {
+    background: #F1EDE9;
+}
+
+.gallery .gallery-item {
+    color: #29282d;
+}
+
+.gallery .gallery-item .selected {
+    background-color: #29282d;
+    color: white;
+}
+
+.gradio-container-3-40-1 .prose h1 {
+    color: #29282d;
+}
+
+.gradio-container-3-42-0 .prose h1 {
+    color: #29282d;
+}
+
+.gradio-container-3-40-1 .prose p {
+    font-size: 20px;
+    color: #29282d;
+}
+
+.gradio-container-3-42-0 .prose p {
+    font-size: 20px;
+    color: #29282d;
+}
+
+.gradio-container-3-40-1 .prose strong {
+    font-weight: 800;
+    font-size: 20px;
+    color: #29282d;
+}
+
+.gradio-container-3-42-0 .prose strong {
+    font-weight: 800;
+    font-size: 20px;
+    color: #29282d;
+}
