@@ -26,8 +26,8 @@ def get_prompt(message: str,
                chat_history: list[tuple[str, str]],
                system_prompt: str) -> str:
     """Create a prompt for the model to generate a response from."""
-    texts = [f"<|start_header_id|>system<|end_header_id|>\n\n{system_prompt}<|eot_id|>"]
-    texts.append(f"<|start_header_id|>user<|end_header_id|>\n\n{message.strip()}<|eot_id|>\n\n")
+    texts = [f"<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n{system_prompt}<|eot_id|>"]
+    texts.append(f"<|start_header_id|>user<|end_header_id|>\n\n{message.strip()}<|eot_id|><|end_of_text|>")
     return "".join(texts)
 
 class LLAMA_wrapper:
@@ -81,8 +81,8 @@ class LLAMA_wrapper:
             top_k: int = 50,
             ) -> Iterator[str]:
         """Generate a response from a prompt."""
-        #prompt = get_prompt(message, chat_history, system_prompt)
-        return self.generate(message, max_new_tokens, temperature, top_p, top_k)
+        prompt = get_prompt(message, chat_history, system_prompt)
+        return self.generate(prompt, max_new_tokens, temperature, top_p, top_k)
 
     def __call__(self, prompt: str, **kwargs: Any) -> str:
         """Generate a response from a prompt."""
