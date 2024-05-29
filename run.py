@@ -154,16 +154,16 @@ with gr.Blocks(theme='ParityError/Anime') as demo:
             value=50
         )
 
-    gr.Examples(
-        examples=[
-            "Hello there! How are you doing?",
-            "Write a 100-word article on 'Benefits of Open-Source in AI research'",
-        ],
-        inputs=textbox,
-        outputs=[textbox, chatbot],
-        fn=process_example,
-        cache_examples=False,
-    )
+    # gr.Examples(
+    #     examples=[
+    #         "Hello there! How are you doing?",
+    #         "Write a 100-word article on 'Benefits of Open-Source in AI research'",
+    #     ],
+    #     inputs=textbox,
+    #     outputs=[textbox, chatbot],
+    #     fn=process_example,
+    #     cache_examples=False,
+    # )
 
     textbox.submit(
         fn=clear_and_save_textbox,
